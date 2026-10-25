@@ -1,0 +1,5 @@
+homepage: "https://arugulanet.com"
+documentation: "https://github.com/ArugulaNet/arugula#google-tag-manager"
+versions:
+  - sha: a70c2df167bd2aa5682a84a6838922a9f1f6d00b
+    changeNotes: First release. Loads the Arugula site-search script with channel gtm.
