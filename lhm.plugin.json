@@ -1,0 +1,117 @@
+{
+  "identifier": "arugulanet-arugula",
+  "name": "Arugula",
+  "version": "1.0.0",
+  "description": "Find offers that fit what you want, ranked by fit only, with links to buy from the merchant. Tell your assistant what you want in your own words; Arugula returns the offers that fit, best first, each with its price, the shop and a tracked link. Arugula may earn a commission if you buy through these links, at no extra cost to you. By using Arugula you agree to arugulanet.com/terms. Privacy: arugulanet.com/privacy.",
+  "author": "Epyphite",
+  "authorUrl": "https://github.com/ArugulaNet",
+  "homepage": "https://arugulanet.com",
+  "cloudEndpoint": "https://mcp.arugulanet.com/mcp?ch=lobehub",
+  "icon": "https://raw.githubusercontent.com/ArugulaNet/arugula/main/brand/png/icon-dark-512.png",
+  "tags": [
+    "shopping",
+    "search",
+    "recommendations",
+    "offers"
+  ],
+  "tools": [
+    {
+      "name": "find_offers",
+      "description": "Turns the user's request, with any context they stated (location, dates, budget, party size, preferences), into an intent and returns the offers that fit, best first, each with a tracked link to show the user (tracked_url). Matching runs in the background; when no offers are back yet, call get_offers with the intent_id in a few seconds. It never buys anything. By using Arugula you agree to arugulanet.com/terms. Privacy: arugulanet.com/privacy.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "brief": {
+            "description": "true for a short answer: each offer's title, price, fit, how to buy and tracked link, without the explanations.",
+            "type": "boolean"
+          },
+          "budget": {
+            "description": "The user's budget.",
+            "properties": {
+              "amount": {
+                "description": "A decimal amount, for example 25.00.",
+                "type": "string"
+              },
+              "currency": {
+                "description": "ISO 4217, for example SGD.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "amount",
+              "currency"
+            ],
+            "type": "object"
+          },
+          "dates": {
+            "description": "When: dates or times the user gave, for example 'before 9am tomorrow'.",
+            "type": "string"
+          },
+          "locale": {
+            "description": "BCP 47 language tag of the text, for example en-SG.",
+            "type": "string"
+          },
+          "party_size": {
+            "description": "How many people.",
+            "minimum": 1,
+            "type": "integer"
+          },
+          "preferences": {
+            "description": "Anything else the user prefers, in their words.",
+            "type": "string"
+          },
+          "text": {
+            "description": "What the user wants, in their own words, including where if it matters.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "get_offers",
+      "description": "The offers ranked for an intent from find_offers, best first, only those that fit, each with its tracked link (tracked_url) and how_to_buy. offer_id is the offer's public ID: lst_ for a merchant listing (open tracked_url to book with the merchant, no sign-in), off_ for a seller's offer on Arugula. By using Arugula you agree to arugulanet.com/terms. Privacy: arugulanet.com/privacy.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "brief": {
+            "description": "true for a short answer: each offer's title, price, fit, how to buy and tracked link, without the explanations.",
+            "type": "boolean"
+          },
+          "intent_id": {
+            "description": "The intent_id find_offers returned (int_...).",
+            "type": "string"
+          }
+        },
+        "required": [
+          "intent_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "explain_match",
+      "description": "One match with its explanation: why the offer fits the request, its fit and verification, and the draft terms (getMatch). brief: true leaves the explanation out. By using Arugula you agree to arugulanet.com/terms. Privacy: arugulanet.com/privacy.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "brief": {
+            "description": "true for a short answer: each offer's title, price, fit, how to buy and tracked link, without the explanations.",
+            "type": "boolean"
+          },
+          "match_id": {
+            "description": "The match's ID (mat_...).",
+            "type": "string"
+          }
+        },
+        "required": [
+          "match_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ]
+}
