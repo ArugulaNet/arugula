@@ -124,8 +124,8 @@ One line on any page with a search box. When a visitor searches, offers that fit
 The script sets no cookies.
 
 ```html
-<script async src="https://api.arugulanet.com/embed/v0.4.1/search.js"
-        integrity="sha384-qgRdqoNupYVx9cqVomyUVeXb1LEtCcXzlis7Fj1ezqHWlafaxUslrvKRBKsLKuYG"
+<script async src="https://api.arugulanet.com/embed/v0.5.0/search.js"
+        integrity="sha384-J3S8wL7BiucOTsplqZ9Sc3itJKtaWwnOB5tzv6KEEp4RiNOVo+XalwwRcnUaGdmG"
         crossorigin="anonymous" data-channel="site-search"></script>
 ```
 
@@ -138,7 +138,7 @@ It finds your search box by itself: `input[type=search]`, a search form, or an i
 | `data-container` | Where the offers go | Right after the search form |
 | `data-limit` | How many offers to show | 3 |
 
-The hashes for each release are at `https://api.arugulanet.com/embed/v0.4.1/integrity.json`. Each release path
+The hashes for each release are at `https://api.arugulanet.com/embed/v0.5.0/integrity.json`. Each release path
 never changes.
 
 ## Shopify
@@ -146,8 +146,8 @@ never changes.
 In your theme, open **Edit code**, then `layout/theme.liquid`, and paste this just before `</body>`:
 
 ```html
-<script async src="https://api.arugulanet.com/embed/v0.4.1/search.js"
-        integrity="sha384-qgRdqoNupYVx9cqVomyUVeXb1LEtCcXzlis7Fj1ezqHWlafaxUslrvKRBKsLKuYG"
+<script async src="https://api.arugulanet.com/embed/v0.5.0/search.js"
+        integrity="sha384-J3S8wL7BiucOTsplqZ9Sc3itJKtaWwnOB5tzv6KEEp4RiNOVo+XalwwRcnUaGdmG"
         crossorigin="anonymous" data-channel="shopify"></script>
 ```
 
