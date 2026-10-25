@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.arugulanet/arugula",
+  "title": "Arugula",
+  "description": "Find offers that fit what you want, ranked by fit only, with links to buy.",
+  "version": "1.0.0",
+  "websiteUrl": "https://arugulanet.com",
+  "repository": {
+    "url": "https://github.com/ArugulaNet/arugula",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.arugulanet.com/mcp?ch=mcp-registry"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "arugula",
+  "description": "Find offers that fit what you want, ranked by fit only, with links to buy from the merchant. Arugula may earn a commission if you buy through these links, at no extra cost to you.",
+  "version": "1.0.0",
+  "author": { "name": "Epyphite" },
+  "homepage": "https://arugulanet.com",
+  "repository": "https://github.com/ArugulaNet/arugula",
+  "license": "Apache-2.0"
+}
