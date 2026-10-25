@@ -20,6 +20,11 @@
       "type": "number",
       "required": false,
       "default": 3
+    },
+    "region": {
+      "displayName": "Market (country code), for example SG (empty: the visitor's country)",
+      "type": "string",
+      "required": false
     }
   },
   "permissions": {

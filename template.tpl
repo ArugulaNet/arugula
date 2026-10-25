@@ -54,6 +54,21 @@ ___TEMPLATE_PARAMETERS___
         "type": "POSITIVE_NUMBER"
       }
     ]
+  },
+  {
+    "type": "TEXT",
+    "name": "region",
+    "displayName": "Market (country code)",
+    "simpleValueType": true,
+    "help": "Optional. Your site's market as a two-letter country code, for example SG. Empty: Arugula uses the visitor's country.",
+    "valueValidators": [
+      {
+        "type": "REGEX",
+        "args": [
+          "^([A-Za-z]{2})?$"
+        ]
+      }
+    ]
   }
 ]
 
@@ -67,12 +82,13 @@ const makeInteger = require('makeInteger');
 
 // The released site-search script (Arugula webapp, ADAG-206). GTM cannot set integrity on an
 // injected script; the URL is versioned.
-const url = 'https://api.arugulanet.com/embed/v0.5.2/search.js';
+const url = 'https://api.arugulanet.com/embed/v0.5.3/search.js';
 
 const settings = { channel: 'gtm' };
 if (data.selector) settings.selector = data.selector;
 if (data.container) settings.container = data.container;
 if (data.limit) settings.limit = makeInteger(data.limit);
+if (data.region) settings.region = data.region;
 setInWindow('adagentSearch', settings, true);
 
 if (queryPermission('inject_script', url)) {
@@ -99,7 +115,7 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://api.arugulanet.com/embed/v0.5.2/search.js"
+                "string": "https://api.arugulanet.com/embed/v0.5.3/search.js"
               }
             ]
           }
@@ -177,5 +193,5 @@ ___WEB_PERMISSIONS___
 
 ___NOTES___
 
-Loads https://api.arugulanet.com/embed/v0.5.2/search.js with channel gtm.
+Loads https://api.arugulanet.com/embed/v0.5.3/search.js with channel gtm.
 The script reads its settings from window.adagentSearch.

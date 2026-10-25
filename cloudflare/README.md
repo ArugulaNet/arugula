@@ -9,7 +9,7 @@ Under every list of offers, the script shows:
 By using Arugula you agree to [arugulanet.com/terms](https://arugulanet.com/terms). Privacy: [arugulanet.com/privacy](https://arugulanet.com/privacy).
 
 Pick one of three ways in. All three load the same pinned script:
-`https://api.arugulanet.com/embed/v0.5.2/search.js`.
+`https://api.arugulanet.com/embed/v0.5.3/search.js`.
 
 ## (a) Zaraz Custom HTML (works today for any Zaraz user)
 
@@ -18,14 +18,14 @@ Pick one of three ways in. All three load the same pinned script:
 3. Paste this as the tool's HTML:
 
    ```html
-   <script async src="https://api.arugulanet.com/embed/v0.5.2/search.js"
-     integrity="sha384-VUDq6tLbkK5ID6JJ8KnwaPN9dWB5VCKUxZ/r7gJTZdpXxn+yqTE2S7AKsVNmuXGD"
+   <script async src="https://api.arugulanet.com/embed/v0.5.3/search.js"
+     integrity="sha384-zA3WSKKc0LPhJbRva74fnPt5eNSe2c39gzLc9uH744kZoujIak40WE87iwYlkcbA"
      crossorigin="anonymous" data-channel="zaraz"></script>
    ```
 
 4. Give the tool an action with the **Pageview** trigger, then **Save**.
 
-Optional attributes: `data-selector` (the search box, as a CSS selector; empty means it finds it itself), `data-container` (where offers go; empty means right after the search form) and `data-limit` (how many offers, default 3).
+Optional attributes: `data-selector` (the search box, as a CSS selector; empty means it finds it itself), `data-container` (where offers go; empty means right after the search form), `data-limit` (how many offers, default 3) and `data-region` (your market as a two-letter country code, for example `SG`; empty means the visitor's country).
 
 ## (b) Zaraz Custom Managed Component (channel `zaraz`)
 
@@ -42,7 +42,7 @@ The component is in `component/`. It is one file with no imports, so there is no
 3. In the dashboard: **Tag setup** → **Tools Configuration** → **Third-party tools** → **Add new tool** → **Custom Managed Component** → **Continue**.
 4. Under **Select Custom MC**, choose `custom-mc-arugula` → **Continue**.
 5. Under **Permissions**, grant the one to execute scripts (`execute_unsafe_scripts`). The component needs it to add the script to the page. **Continue**.
-6. Under **Set up**, the settings are all optional: `selector`, `container` and `limit` (as in `manifest.json`). **Save**.
+6. Under **Set up**, the settings are all optional: `selector`, `container`, `limit` and `region`, your market as a country code (as in `manifest.json`). **Save**.
 7. Add an action of type **Pageview** with the **Pageview** trigger. Zaraz does not call the component until the tool has an action.
 
 The deploy tool does not read `manifest.json`, and the docs do not say whether Zaraz does for a Custom Managed Component. The manifest is there for the Managed Components format.
@@ -53,7 +53,7 @@ The Worker is in `worker/`. It adds the script tag to every HTML page at the edg
 
 1. In `worker/wrangler.toml`, add a route in front of your site, for example
    `routes = [{ pattern = "shop.example.com/*", zone_name = "example.com" }]`.
-2. Optional, under `[vars]`: `ARUGULA_SELECTOR`, `ARUGULA_CONTAINER`, `ARUGULA_LIMIT`.
+2. Optional, under `[vars]`: `ARUGULA_SELECTOR`, `ARUGULA_CONTAINER`, `ARUGULA_LIMIT`, `ARUGULA_REGION` (your market, for example `SG`).
 3. `npx wrangler login`, then `npx wrangler deploy` in `worker/`.
 
 ## Sources
