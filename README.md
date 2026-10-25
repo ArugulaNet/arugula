@@ -22,6 +22,9 @@ first. Each offer comes with its price, a one-line reason why it fits, and a lin
 Website: [arugulanet.com](https://arugulanet.com) · Privacy: [arugulanet.com/privacy](https://arugulanet.com/privacy/) ·
 Terms: [arugulanet.com/terms](https://arugulanet.com/terms/)
 
+By using Arugula you agree to [arugulanet.com/terms](https://arugulanet.com/terms/). Privacy:
+[arugulanet.com/privacy](https://arugulanet.com/privacy/).
+
 ## Where to use it
 
 | Surface | For | Status |
@@ -32,6 +35,8 @@ Terms: [arugulanet.com/terms](https://arugulanet.com/terms/)
 | [Shopify](#shopify) | Shopify stores | Live |
 | [Google Tag Manager](#google-tag-manager) | Sites that use GTM | Live (import); gallery listing in review |
 | [WordPress](#wordpress) | WordPress sites | Live (ZIP); WordPress.org listing in review |
+| [Cloudflare Zaraz](#cloudflare-zaraz-and-workers) | Sites that use Zaraz | Live |
+| [Cloudflare Worker](#cloudflare-zaraz-and-workers) | Sites on Cloudflare without Zaraz | Live |
 | [Chatbots](#chatbots) | Chatwoot, Botpress, Rasa, Voiceflow and your own bot | Live, partner key on request |
 | [Python](#python) | Your own agents (LangChain, LangGraph, CrewAI) | Live on PyPI |
 | [JavaScript](#javascript) | Your own agents | Coming soon |
@@ -124,8 +129,8 @@ One line on any page with a search box. When a visitor searches, offers that fit
 The script sets no cookies.
 
 ```html
-<script async src="https://api.arugulanet.com/embed/v0.5.0/search.js"
-        integrity="sha384-J3S8wL7BiucOTsplqZ9Sc3itJKtaWwnOB5tzv6KEEp4RiNOVo+XalwwRcnUaGdmG"
+<script async src="https://api.arugulanet.com/embed/v0.5.1/search.js"
+        integrity="sha384-X4k3s69VsfRmYH9tdbbuEnV4cAd/fQqqVBD0V0ufGlckBax2Aqh7Ji8UibiGIUFG"
         crossorigin="anonymous" data-channel="site-search"></script>
 ```
 
@@ -138,7 +143,7 @@ It finds your search box by itself: `input[type=search]`, a search form, or an i
 | `data-container` | Where the offers go | Right after the search form |
 | `data-limit` | How many offers to show | 3 |
 
-The hashes for each release are at `https://api.arugulanet.com/embed/v0.5.0/integrity.json`. Each release path
+The hashes for each release are at `https://api.arugulanet.com/embed/v0.5.1/integrity.json`. Each release path
 never changes.
 
 ## Shopify
@@ -146,8 +151,8 @@ never changes.
 In your theme, open **Edit code**, then `layout/theme.liquid`, and paste this just before `</body>`:
 
 ```html
-<script async src="https://api.arugulanet.com/embed/v0.5.0/search.js"
-        integrity="sha384-J3S8wL7BiucOTsplqZ9Sc3itJKtaWwnOB5tzv6KEEp4RiNOVo+XalwwRcnUaGdmG"
+<script async src="https://api.arugulanet.com/embed/v0.5.1/search.js"
+        integrity="sha384-X4k3s69VsfRmYH9tdbbuEnV4cAd/fQqqVBD0V0ufGlckBax2Aqh7Ji8UibiGIUFG"
         crossorigin="anonymous" data-channel="shopify"></script>
 ```
 
@@ -168,6 +173,19 @@ You can also download the template as a ZIP from `https://api.arugulanet.com/aru
 Download [arugula-wordpress.zip](https://api.arugulanet.com/arugula-wordpress.zip). In WordPress, open **Plugins**,
 then **Add New**, then **Upload Plugin**. Choose the file and activate it. It attaches to your site's search with
 nothing to set up. The plugin's `readme.txt` lists everything it sends and stores.
+
+## Cloudflare Zaraz and Workers
+
+Three ways in, all in [`cloudflare/`](cloudflare/README.md):
+
+1. **Zaraz Custom HTML:** add a Custom HTML tool with the [site search](#site-search) snippet, using
+   `data-channel="zaraz"`, and give it a Pageview action.
+2. **Zaraz Custom Managed Component:** deploy [`cloudflare/component`](cloudflare/component) as a Worker with
+   `npx managed-component-to-cloudflare-worker ./index.js arugula`, then add it under Third-party tools.
+3. **Cloudflare Worker** for sites on Cloudflare without Zaraz: [`cloudflare/worker`](cloudflare/worker) adds the
+   script at the edge (`npx wrangler deploy`).
+
+The script runs once per page even when Zaraz fires on every single-page navigation.
 
 ## Chatbots
 

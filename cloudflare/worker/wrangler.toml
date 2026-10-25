@@ -1,0 +1,10 @@
+# Route this Worker in front of your site, for example: routes = [{ pattern = "shop.example.com/*", zone_name = "example.com" }]
+name = "arugula-offers"
+main = "worker.js"
+compatibility_date = "2024-10-01"
+
+[vars]
+# All optional.
+# ARUGULA_SELECTOR = "input[name=q]"
+# ARUGULA_CONTAINER = "#offers"
+# ARUGULA_LIMIT = "3"

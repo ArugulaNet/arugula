@@ -1,0 +1,12 @@
+{
+  "name": "arugula-zaraz",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Arugula as a Cloudflare Zaraz Custom Managed Component: offers that fit what visitors search for, ranked by fit only.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "login": "npx wrangler login",
+    "deploy": "npx managed-component-to-cloudflare-worker ./index.js arugula"
+  }
+}

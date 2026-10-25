@@ -1,0 +1,31 @@
+{
+  "name": "Arugula",
+  "namespace": "arugula",
+  "icon": "assets/arugula.svg",
+  "description": "Shows offers that fit what visitors search for on your site, beside your search results, each with a tracked link. Ranked by fit only. Attaches to your existing search box; no code change.",
+  "allowCustomFields": false,
+  "fields": {
+    "selector": {
+      "displayName": "Search box selector (empty: detected by itself)",
+      "type": "string",
+      "required": false
+    },
+    "container": {
+      "displayName": "Where offers show, as a CSS selector (empty: after the search form)",
+      "type": "string",
+      "required": false
+    },
+    "limit": {
+      "displayName": "Number of offers",
+      "type": "number",
+      "required": false,
+      "default": 3
+    }
+  },
+  "permissions": {
+    "execute_unsafe_scripts": {
+      "description": "Loads the Arugula site-search script from api.arugulanet.com, pinned by its integrity hash.",
+      "required": true
+    }
+  }
+}
