@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="brand/png/logo-horizontal-dark.png">
+    <img src="brand/png/logo-horizontal-900.png" alt="Arugula, Intent Exchange Network" width="450">
+  </picture>
+</p>
+
 # Arugula
 
 **Offers that fit, wherever people ask.**
@@ -214,6 +221,11 @@ If you build on Arugula, show this line with the offers:
 > Ranked by fit only. Arugula may earn a commission if you buy through these links, at no extra cost to you.
 
 The tools and the API return it with every list of offers, as `disclosure`.
+
+## Brand
+
+Logos, icons, avatars, favicons and social images are in [`brand/`](brand/), with the rules in
+[`brand/BRAND.md`](brand/BRAND.md). Use them as they are: no recolouring, outlines or effects.
 
 ## Help
 

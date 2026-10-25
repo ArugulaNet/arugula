@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 230" width="900" height="230">
+<defs>
+ <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+  <stop offset="0" stop-color="#1B5E2E"/><stop offset="0.5" stop-color="#3C9A3F"/><stop offset="1" stop-color="#8CC63F"/>
+ </linearGradient>
+</defs>
+<g transform="translate(20,5)">
+<g stroke="url(#g)" stroke-width="7" stroke-linecap="round" fill="none">
+ <!-- edges -->
+ <line x1="30" y1="70" x2="100" y2="40"/>
+ <line x1="100" y1="40" x2="160" y2="30"/>
+ <line x1="30" y1="70" x2="100" y2="120"/>
+ <line x1="100" y1="40" x2="100" y2="120"/>
+ <line x1="160" y1="30" x2="160" y2="90"/>
+ <line x1="100" y1="120" x2="160" y2="90"/>
+ <line x1="100" y1="120" x2="50" y2="150"/>
+ <line x1="100" y1="120" x2="160" y2="150"/>
+ <line x1="160" y1="150" x2="160" y2="90"/>
+ <line x1="100" y1="120" x2="110" y2="185"/>
+ <line x1="50" y1="150" x2="30" y2="70"/>
+ <line x1="110" y1="185" x2="80" y2="205"/>
+ <line x1="100" y1="40" x2="160" y2="90"/>
+</g>
+<!-- hex nodes -->
+<g fill="none" stroke="url(#g)" stroke-width="7" stroke-linejoin="round">
+ <polygon points="100,98 119,109 119,131 100,142 81,131 81,109"/>
+ <polygon points="160,74 173,81.5 173,98.5 160,106 147,98.5 147,81.5"/>
+ <polygon points="50,136 62,143 62,157 50,164 38,157 38,143"/>
+</g>
+<!-- filled centre hex -->
+<polygon points="100,108 110,114 110,126 100,132 90,126 90,114" fill="url(#g)"/>
+<!-- round nodes -->
+<g fill="url(#g)">
+ <circle cx="30" cy="70" r="15"/>
+ <circle cx="100" cy="40" r="17"/>
+ <circle cx="160" cy="30" r="13"/>
+ <circle cx="160" cy="150" r="14"/>
+ <circle cx="110" cy="185" r="11"/>
+ <circle cx="80" cy="205" r="11"/>
+ <circle cx="100" cy="120" r="0"/>
+</g>
+
+</g>
+<text x="246" y="128" font-family="Montserrat, Helvetica, Arial, sans-serif" font-weight="700" font-size="104" letter-spacing="-4" fill="#2E3A2E">Arugula</text>
+</svg>

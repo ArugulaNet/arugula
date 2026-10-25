@@ -5,6 +5,15 @@
   "description": "Find offers that fit what you want, ranked by fit only, with links to buy.",
   "version": "1.0.0",
   "websiteUrl": "https://arugulanet.com",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/ArugulaNet/arugula/main/brand/png/icon-dark-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
   "repository": {
     "url": "https://github.com/ArugulaNet/arugula",
     "source": "github"
