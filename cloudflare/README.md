@@ -9,7 +9,7 @@ Under every list of offers, the script shows:
 By using Arugula you agree to [arugulanet.com/terms](https://arugulanet.com/terms). Privacy: [arugulanet.com/privacy](https://arugulanet.com/privacy).
 
 Pick one of three ways in. All three load the same pinned script:
-`https://api.arugulanet.com/embed/v0.5.1/search.js`.
+`https://api.arugulanet.com/embed/v0.5.2/search.js`.
 
 ## (a) Zaraz Custom HTML (works today for any Zaraz user)
 
@@ -18,8 +18,8 @@ Pick one of three ways in. All three load the same pinned script:
 3. Paste this as the tool's HTML:
 
    ```html
-   <script async src="https://api.arugulanet.com/embed/v0.5.1/search.js"
-     integrity="sha384-X4k3s69VsfRmYH9tdbbuEnV4cAd/fQqqVBD0V0ufGlckBax2Aqh7Ji8UibiGIUFG"
+   <script async src="https://api.arugulanet.com/embed/v0.5.2/search.js"
+     integrity="sha384-VUDq6tLbkK5ID6JJ8KnwaPN9dWB5VCKUxZ/r7gJTZdpXxn+yqTE2S7AKsVNmuXGD"
      crossorigin="anonymous" data-channel="zaraz"></script>
    ```
 

@@ -3,9 +3,9 @@
  * site-search script to every HTML page at the edge, with channel cloudflare. Optional variables
  * (wrangler.toml [vars]): ARUGULA_SELECTOR, ARUGULA_CONTAINER, ARUGULA_LIMIT.
  */
-const SCRIPT = "https://api.arugulanet.com/embed/v0.5.1/search.js";
-/** Keep in step with /embed/v0.5.1/integrity.json (webapp ADAG-206). */
-const SRI = "sha384-X4k3s69VsfRmYH9tdbbuEnV4cAd/fQqqVBD0V0ufGlckBax2Aqh7Ji8UibiGIUFG";
+const SCRIPT = "https://api.arugulanet.com/embed/v0.5.2/search.js";
+/** Keep in step with /embed/v0.5.2/integrity.json (webapp ADAG-206). */
+const SRI = "sha384-VUDq6tLbkK5ID6JJ8KnwaPN9dWB5VCKUxZ/r7gJTZdpXxn+yqTE2S7AKsVNmuXGD";
 
 const attribute = (value) => String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 

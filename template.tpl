@@ -67,7 +67,7 @@ const makeInteger = require('makeInteger');
 
 // The released site-search script (Arugula webapp, ADAG-206). GTM cannot set integrity on an
 // injected script; the URL is versioned.
-const url = 'https://api.arugulanet.com/embed/v0.5.1/search.js';
+const url = 'https://api.arugulanet.com/embed/v0.5.2/search.js';
 
 const settings = { channel: 'gtm' };
 if (data.selector) settings.selector = data.selector;
@@ -99,7 +99,7 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://api.arugulanet.com/embed/v0.5.1/search.js"
+                "string": "https://api.arugulanet.com/embed/v0.5.2/search.js"
               }
             ]
           }
@@ -177,5 +177,5 @@ ___WEB_PERMISSIONS___
 
 ___NOTES___
 
-Loads https://api.arugulanet.com/embed/v0.5.1/search.js with channel gtm.
+Loads https://api.arugulanet.com/embed/v0.5.2/search.js with channel gtm.
 The script reads its settings from window.adagentSearch.

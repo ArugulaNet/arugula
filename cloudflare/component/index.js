@@ -6,9 +6,9 @@
  * The settings go through `window.adagentSearch`: search.js reads that global, so it keeps its name.
  * One file with no imports, so it needs no build before `managed-component-to-cloudflare-worker`.
  */
-const SCRIPT = "https://api.arugulanet.com/embed/v0.5.1/search.js";
-/** Keep in step with /embed/v0.5.1/integrity.json (webapp ADAG-206). */
-const SRI = "sha384-X4k3s69VsfRmYH9tdbbuEnV4cAd/fQqqVBD0V0ufGlckBax2Aqh7Ji8UibiGIUFG";
+const SCRIPT = "https://api.arugulanet.com/embed/v0.5.2/search.js";
+/** Keep in step with /embed/v0.5.2/integrity.json (webapp ADAG-206). */
+const SRI = "sha384-VUDq6tLbkK5ID6JJ8KnwaPN9dWB5VCKUxZ/r7gJTZdpXxn+yqTE2S7AKsVNmuXGD";
 
 export default async function (manager, settings) {
   const config = { channel: "zaraz", limit: Number(settings.limit) || 3 };
