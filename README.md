@@ -218,6 +218,8 @@ from arugulanet import Arugula
 offers = Arugula().find_offers("a hotel room in Singapore for two nights", party_size=2)
 ```
 
+If you know your user's country, pass it: `Arugula(country="SG")`. Offers available there come first.
+
 For LangChain and LangGraph, install `"arugulanet[langchain]"` or `"arugulanet[langgraph]"` and use
 `from arugulanet.langchain import find_offers_tool`. For CrewAI, install `"arugulanet[crewai]"` and use
 `from arugulanet.crewai import FindOffersTool`.
