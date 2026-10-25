@@ -26,7 +26,8 @@ Terms: [arugulanet.com/terms](https://arugulanet.com/terms/)
 | [Google Tag Manager](#google-tag-manager) | Sites that use GTM | Live (import); gallery listing in review |
 | [WordPress](#wordpress) | WordPress sites | Live (ZIP); WordPress.org listing in review |
 | [Chatbots](#chatbots) | Chatwoot, Botpress, Rasa, Voiceflow and your own bot | Live, partner key on request |
-| [Python](#python) and [JavaScript](#javascript) | Your own agents | Coming soon |
+| [Python](#python) | Your own agents (LangChain, LangGraph, CrewAI) | Live on PyPI |
+| [JavaScript](#javascript) | Your own agents | Coming soon |
 | Chrome and Firefox extensions | Your browser | Coming soon |
 | Claude directory, ChatGPT app | Assistants | Coming soon |
 | Discord | Servers | Coming soon |
@@ -178,13 +179,22 @@ webhook to `https://api.arugulanet.com/hooks/chatwoot/<partner id>?key=<partner 
 
 ## Python
 
-Coming soon to PyPI as `arugulanet`. No account needed. Includes tools for LangChain, LangGraph and CrewAI.
+[`arugulanet` on PyPI](https://pypi.org/project/arugulanet/). Needs Python 3.9 or later, has no dependencies, and needs
+no account.
+
+```sh
+pip install arugulanet
+```
 
 ```python
 from arugulanet import Arugula
 
 offers = Arugula().find_offers("a hotel room in Singapore for two nights", party_size=2)
 ```
+
+For LangChain and LangGraph, install `"arugulanet[langchain]"` or `"arugulanet[langgraph]"` and use
+`from arugulanet.langchain import find_offers_tool`. For CrewAI, install `"arugulanet[crewai]"` and use
+`from arugulanet.crewai import FindOffersTool`.
 
 ## JavaScript
 
